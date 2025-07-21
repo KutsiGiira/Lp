@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import BgImage from './Components/BackgroundImage/bgImage'
-import Nav from './Components/nav';
+import Nav from './Components/Nav/nav';
 function App() {
 
   return (

@@ -4,5 +4,8 @@
   "Gallery": "Galerie",
   "About": "À propos",
   "Contact": "Contact",
-  "BookTable": "Réserver une table"
+  "BookTable": "Réserver une table",
+  "MenuButton": "Menu",
+  "HeroTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  "HeroSTitle": "Nous préparons les meilleurs plats pour vous"
 }
