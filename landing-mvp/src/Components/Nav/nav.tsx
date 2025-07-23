@@ -2,9 +2,9 @@ import React from "react";
 import Logo from '../../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import Hero from "../Hero/Hero";
+import TopPlates from "../Body/TopPlates";
 function Nav(){
         const { t, i18n } = useTranslation();
-        console.log("cur" + i18n.language);
       const changeLanguage = (lng: 'en' | 'fr' | 'ar') => {
         i18n.changeLanguage(lng);
         document.body.dir  = lng === 'ar'? 'rtl' : 'ltr';
@@ -18,22 +18,56 @@ function Nav(){
     ]
     return(
         <>
-        <section className="flex items-center bg-transparent justify-center gap-45 mt-1" id="bgNav">
-            <div className="flex justify-center items-center gap-1  hover:cursor-pointer">
-                <img src={Logo} alt="logo" className="w-16 h-18"/>
-                <span className="font-semibold text-2xl">restaurant</span>
+        <header className="bg-transparent mt-5">
+            <section
+            className="
+                flex flex-col sm:flex-row 
+                items-center justify-between 
+                gap-4 sm:gap-10 
+                px-4 sm:px-10
+            "
+            id="bgNav"
+            >
+            {/* Logo */}
+            <div className="flex justify-center items-center gap-2 hover:cursor-pointer">
+                <img src={Logo} alt="logo" className="w-12 sm:w-16 h-auto" />
+                <span className="font-semibold text-xl sm:text-2xl">restaurant</span>
             </div>
-            <div className="flex gap-10">
-                {navbar.map((n,i) =>(<li key={i} className="list-none hover:text-[#D96F32] hover:cursor-pointer font-medium">{t(n)}</li>))}
+
+            {/* Navigation links */}
+            <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10">
+                {navbar.map((n, i) => (
+                <li
+                    key={i}
+                    className="list-none hover:text-[#D96F32] hover:cursor-pointer font-medium text-sm sm:text-base"
+                >
+                    {t(n)}
+                </li>
+                ))}
+            </ul>
+
+            {/* Actions: Button + Language */}
+            <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 mt-3 sm:mt-0">
+                <button className="bg-[#D96F32] px-3 py-1.5 rounded-tl-xl rounded-br-xl text-white font-semibold hover:cursor-pointer text-sm sm:text-base">
+                {t('BookTable')}
+                </button>
+                <select
+                onChange={(e) => changeLanguage(e.target.value as 'en' | 'fr' | 'ar')}
+                value={i18n.language}
+                className="border border-black text-sm sm:text-base hover:cursor-pointer px-1 py-0.5 rounded"
+                >
+                {lang.map((l) => (
+                    <option key={l.code} value={l.code}>
+                    {l.label}
+                    </option>
+                ))}
+                </select>
             </div>
-            <div className="flex gap-10">
-                <button className="bg-[#D96F32] p-2 rounded-tl-xl rounded-br-xl text-white font-semibold  hover:cursor-pointer">{t('BookTable')}</button>
-                 <select onChange={(e) => changeLanguage(e.target.value as 'en'|'fr'|'ar')} value={i18n.language} className="border-1 border-black  hover:cursor-pointer">
-                    {lang.map((l) => (<option key={l.code} value={l.code}>{l.label}</option>) )}
-                 </select>
-            </div>
-        </section>
-        <Hero lng={i18n.language}/>
+            </section>
+        </header>
+
+        <Hero lng={i18n.language} />
+        <TopPlates />
         </>
 
     )
