@@ -3,6 +3,7 @@ import Logo from '../../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import Hero from "../Hero/Hero";
 import TopPlates from "../Body/TopPlates";
+import Customers from "../Customers/Customers";
 function Nav(){
         const { t, i18n } = useTranslation();
       const changeLanguage = (lng: 'en' | 'fr' | 'ar') => {
@@ -18,11 +19,11 @@ function Nav(){
     ]
     return(
         <>
-        <header className="bg-transparent mt-5">
+        <header className="bg-transparent mt-12">
             <section
             className="
                 flex flex-col sm:flex-row 
-                items-center justify-between 
+                items-center justify-evenly 
                 gap-4 sm:gap-10 
                 px-4 sm:px-10
             "
@@ -39,7 +40,7 @@ function Nav(){
                 {navbar.map((n, i) => (
                 <li
                     key={i}
-                    className="list-none hover:text-[#D96F32] hover:cursor-pointer font-medium text-sm sm:text-base"
+                    className="list-none hover:text-[#D96F32] text-gray-600 hover:cursor-pointer font-medium text-sm sm:text-base"
                 >
                     {t(n)}
                 </li>
@@ -48,7 +49,7 @@ function Nav(){
 
             {/* Actions: Button + Language */}
             <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 mt-3 sm:mt-0">
-                <button className="bg-[#D96F32] px-3 py-1.5 rounded-tl-xl rounded-br-xl text-white font-semibold hover:cursor-pointer text-sm sm:text-base">
+                <button className="bg-[#D96F32] px-5 py-3 rounded-tl-xl rounded-br-xl text-white font-semibold hover:cursor-pointer text-sm sm:text-base">
                 {t('BookTable')}
                 </button>
                 <select
@@ -68,6 +69,7 @@ function Nav(){
 
         <Hero lng={i18n.language} />
         <TopPlates />
+        <Customers/>
         </>
 
     )
