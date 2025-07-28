@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Hero from "../Hero/Hero";
 import TopPlates from "../Body/TopPlates";
 import Customers from "../Customers/Customers";
+import Footer from "../footer/Footer";
 function Nav(){
         const { t, i18n } = useTranslation();
       const changeLanguage = (lng: 'en' | 'fr' | 'ar') => {
@@ -19,7 +20,7 @@ function Nav(){
     ]
     return(
         <>
-        <header className="bg-transparent mt-12">
+        <header className="bg-transparent mt-12 mb-4">
             <section
             className="
                 flex flex-col sm:flex-row 
@@ -68,10 +69,10 @@ function Nav(){
         </header>
 
         <Hero lng={i18n.language} />
-        <TopPlates />
-        <Customers/>
+        <TopPlates lng={i18n.language} />
+        <Customers lng={i18n.language}/>
+        <Footer lng={i18n.language}/>
         </>
-
     )
 }
 export default Nav;
