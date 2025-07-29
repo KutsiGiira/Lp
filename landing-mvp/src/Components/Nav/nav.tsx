@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from '../../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import Hero from "../Hero/Hero";

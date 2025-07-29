@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import 'react-slideshow-image/dist/styles.css';
-import bgCus from '../../assets/bgCus.png'
 import { Slide } from 'react-slideshow-image';
 import { t } from 'i18next';
 
-function Customers(props: {lng: string}){
+function Customers(_props: {lng: string}){
 const Cus: { id: number; comment: string; name: string }[] = [
   {
     id: 1,

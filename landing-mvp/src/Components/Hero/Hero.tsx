@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import Hiro from '../../assets/res.jpg';
-import food from '../../assets/food.png';
 import fb from '../../assets/facebook.png';
 import insta from '../../assets/instagram.png';
 import x from '../../assets/twitter.png';
 import bgHero from '../../assets/bgHero.jpg'
 import { t } from 'i18next';
-function Hero(props: { lng: string; }){
+function Hero(_props: {lng: string; }){
 return (
   <main className="flex flex-col lg:flex-row w-full overflow-x-hidden mx-auto text-center h-[650px] bg-cover bg-center" style={{ backgroundImage: `url(${bgHero})` }}>
     <section className="flex flex-col gap-6 px-6 sm:px-10 lg:px-16 py-20 w-full h-fit my-auto">

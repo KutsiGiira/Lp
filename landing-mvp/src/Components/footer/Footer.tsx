@@ -6,7 +6,7 @@ import x from '../../assets/twitter.png';
 import bgFooter from '../../assets/bgFooter.jpg';
 
 import { t } from 'i18next';
-function Footer(props: {lng: string}) {
+function Footer(_props: {lng: string}) {
   const socials: string[] = ['Menu', 'Events', 'Gallery', 'About', 'Contact'];
   const dishes: string[] = ['Tacos', 'Pizza', 'Sandwich', 'Panini'];
 

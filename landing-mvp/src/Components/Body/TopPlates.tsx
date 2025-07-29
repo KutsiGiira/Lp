@@ -5,7 +5,7 @@ import tacos from '../../assets/tacos.png';
 import shawarma from '../../assets/shawarma.png';
 import dish from '../../assets/dish.png';
 import { t } from 'i18next';
-function TopPlates(props:{lng: string}) {
+function TopPlates(_props:{lng: string}) {
   const plates: { id: number, img: string, name: string, desc: string, price: string }[] = [
     { id: 1, img: tacos, name: "Tacos", desc: t('tacosDesc'), price: "36dh" },
     { id: 2, img: pizza, name: "Pizza", desc: t('pizzaDesc'), price: "45dh" },
